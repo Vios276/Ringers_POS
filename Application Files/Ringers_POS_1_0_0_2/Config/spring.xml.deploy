@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:db="http://www.springframework.net/database"
+         default-autowire="byType">
+
+  <object type="Spring.Data.Core.AdoPlatformTransactionManager, Spring.Data" />
+
+  <!--Forms-->
+  <object id="formBoot"      type="AutoPeeler.FormBoot,                       AutoPeeler" autowire="byName" />
+  <object id="formMain"      type="AutoPeeler.Forms.FormMain,                 AutoPeeler" autowire="byName" />
+  <object id="formAlarm"      type="AutoPeeler.Forms.formAlarm,                 AutoPeeler" autowire="byName" />
+  <object id="formSystem"    type="AutoPeeler.Forms.FormSystem,               AutoPeeler" autowire="byName" />
+
+  <!--SubForms-->
+  <object id="formAlarmAlive"     type="AutoPeeler.Forms.Alarm.FormAlarmAlive,        AutoPeeler" autowire="byName" />
+  <object id="formAlarmHistory"     type="AutoPeeler.Forms.Alarm.FormAlarmHistory,        AutoPeeler" autowire="byName" />
+
+  <object id="formParam"     type="AutoPeeler.Forms.Systems.FormParam,        AutoPeeler" autowire="byName" />
+  <object id="formIOMonitor" type="AutoPeeler.Forms.Systems.FormIOMonitor,    AutoPeeler" autowire="byName" />
+
+  <object id="formControlMode" type="AutoPeeler.Forms.Common.FormControlMode, AutoPeeler" autowire="byName"/>
+  <object id="formKeyInBCR"    type="AutoPeeler.Forms.Common.FormKeyInBCR,    AutoPeeler" autowire="byName"  />
+  <object id="formPanelHis"    type="AutoPeeler.Forms.FormPanelHis,     AutoPeeler" autowire="byName" />
+  <object id="formTerminal"   type="AutoPeeler.Forms.FormTerminal,          AutoPeeler" autowire="byName" />
+
+
+
+  <object type="AutoPeeler.Dao.BizAppDao, AutoPeeler" />
+  <object type="AutoPeeler.Dao.BizAlarmHisDao, AutoPeeler" />
+  <object type="AutoPeeler.Dao.BizAlarmDao, AutoPeeler" />
+
+  <object type="AutoPeeler.Dao.BizRcpDao, AutoPeeler" />
+  <object type="AutoPeeler.Dao.BizParamAttrDao, AutoPeeler" />
+  <object type="AutoPeeler.Dao.BizTerminalDao, AutoPeeler" />
+  <object type="AutoPeeler.Dao.BizPanelHisDao, AutoPeeler"/>
+</objects>
