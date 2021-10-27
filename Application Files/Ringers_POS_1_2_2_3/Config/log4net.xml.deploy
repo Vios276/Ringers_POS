@@ -1,0 +1,63 @@
+﻿<log4net>
+
+  <root>
+    <level value="INFO" />
+    <appender-ref ref="FileAppender" />
+    <appender-ref ref="WarnFileAppender" />
+  </root>
+
+  <logger name="Server">
+    <appender-ref ref="ApiAppender" />
+    <appender-ref ref="ApiWarnAppender" />
+  </logger>
+
+
+
+  <appender name="FileAppender" type="ViosLib.Logging.FileAppender, ViosLib">
+    <file value="C:\Ringers\LOG\POS.log" />
+    <appendToFile value="true" />
+    <rollingStyle value="Date" />
+    <backupDays value="30" />
+    <datePattern value="-MMdd'.log'" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%d{MM-dd HH:mm:ss.fff} %-2t %p %m%n" />
+    </layout>
+  </appender>
+
+  <appender name="WarnFileAppender" type="ViosLib.Logging.FileAppender, ViosLib">
+    <threshold value="WARN"/>
+    <file value="C:\Ringers\LOG\Warn.log" />
+    <appendToFile value="true" />
+    <rollingStyle value="Date" />
+    <backupDays value="30" />
+    <datePattern value="-MMdd'.log'" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%d{MM-dd HH:mm:ss.fff} %2t %p %m%n" />
+    </layout>
+  </appender>
+
+  <appender name="ApiAppender" type="ViosLib.Logging.FileAppender, ViosLib">
+    <file value="C:\Ringers\LOG\Server.log" />
+    <appendToFile value="true" />
+    <rollingStyle value="Date" />
+    <backupDays value="30" />
+    <datePattern value="-MMdd'.log'" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%d{MM-dd HH:mm:ss.fff} %-2t %p %m%n" />
+    </layout>
+  </appender>
+
+  <appender name="ApiWarnAppender" type="ViosLib.Logging.FileAppender, ViosLib">
+    <threshold value="WARN"/>
+    <file value="C:\Ringers\LOG\ServerWarn.log" />
+    <appendToFile value="true" />
+    <rollingStyle value="Date" />
+    <backupDays value="30" />
+    <datePattern value="-MMdd'.log'" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%d{MM-dd HH:mm:ss.fff} %2t %p %m%n" />
+    </layout>
+  </appender>
+
+
+</log4net>
